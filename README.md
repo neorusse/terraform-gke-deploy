@@ -1,4 +1,4 @@
-# Udacity Cloud DevOps Capstone Project
+# Cloud Kite Reliability Engineer Test
 
 ## A Realtime [To-Do CRUD App](https://neorusse.github.io/to-do/) built in-order to learn React Hooks
 
@@ -6,14 +6,14 @@
 
 ### Project Description
 
-Udacity Cloud DevOps NanoDegree Program Capstone Project done to demostrate knowledge of Building Cloud Native Application, Kubernetes, Docker, CICD, and Infrastructure as Code. Project Task Include:
+Project to demonstrate how to use GitHub Action Server to automate the provisioning of GKE Cluster using Terraform and also deploy app to the Cluster. Project Task Include:
 
-- Working in AWS
-- Using Terraform to provision Resources - AWS VPC, EC2 Linux Machine
-- Building Jenkins pipelines
+- Working in GCP
+- Using Terraform to provision Resources - GCP VPC, and GKE
+- Building GitHub Actions pipelines
 - Building Docker containers in pipelines
-- Creating Kubernetes clusters (AWS EKS)
-- Using Jenkins to implement Continuous Integration and Continuous Deployment
+- Creating Kubernetes clusters (GCP GKE)
+- Using GitHub Actions to implement Continuous Integration and Continuous Deployment
 
 ### Technology Used
 
@@ -23,15 +23,13 @@ Docker
 
 Kubectl
 
-eksctl
+Kustomize
 
-aws cli
+GCloud cli
 
-Jenkins
+GitHub Actions
 
-AWS EC2 Linux Server
-
-AWS EKS
+GCP GKE
 
 Terraform
 
@@ -53,47 +51,27 @@ $ npm start
 
 - App listens on: http://localhost:3000/
 
-### Provision AWS EC2 AMI Linux Server using Terraform
+### Provision GCP GKE Cluster using Terraform
 
-- Download Terraform AWS Provider Plugin, run
+- Download Terraform GCP Provider Plugin, run
 
 ```bash
 $ terraform init
 ```
 
-- To see the list of AWS resources Terraform will create, run
+- To see the list of GCP resources Terraform will create, run
 
 ```bash
-$ terraform plan -out ec2.tfplan
+$ terraform plan -out gke2.tfplan
 ```
 
-- To create the AWS EC2 AMI Linux Server, run
+- To create the GCP GKE Cluster, run
 
 ```bash
-$ terraform apply "ec2.tfplan"
+$ terraform apply "gke2.tfplan"
 ```
 
-### How to Deploy the App to AWS EKS K8s Cluster:
-
-- Create an AWS IAM User with Administrator access privillage
-
-- Initialize Production Build by running:
-
-```bash
-$ npm run build
-```
-
-- Configure Jenkins using the AWS IAM User Credentials
-
-- Configure Jenkins for Docker Build and Deploy to Registry
-
-### Create the AWS EKS K8s Cluster by running:
-
-```bash
-$ eksctl create cluster -f k8s-cluster-init.yml --write-kubeconfig --set-kubeconfig-context
-```
-
-- Deploy to K8s cluster by running Jenkins
+### How to Deploy the App to GCP GKE K8s Cluster:
 
 ### License
 
